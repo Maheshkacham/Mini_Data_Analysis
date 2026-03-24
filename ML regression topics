@@ -1,0 +1,357 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNCrpLy5iuFr/QMyLWnM4A8",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Maheshkacham/Mini_Data_Analysis/blob/main/ML%20regression%20topics\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "NPX4gwwv8CCZ",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "71efe542-5d38-4d3a-dce5-e0a62673a887"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23\n",
+            " 24 25 26 27 28]\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np\n",
+        "dataset = np.arange(29)\n",
+        "print(dataset)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "dataset = np.arange(29)\n",
+        "result=train_test_split(dataset)\n",
+        "\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LgPgwj2wTGDH",
+        "outputId": "3581de00-d307-4e80-9212-ddb83028c882"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[array([22, 17, 11, 23,  0,  5, 25, 28,  6, 10, 15, 14,  9, 20, 19,  2,  4,\n",
+            "        8, 13, 27,  3]), array([ 7, 16, 24,  1, 12, 26, 18, 21])]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "dataset = np.arange(29)\n",
+        "X_train, X_test=train_test_split(dataset)\n",
+        "print()\n",
+        "print(X_train)\n",
+        "print(X_test)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dDlf_EuaTF6L",
+        "outputId": "c244e6df-9cb6-4dd5-b632-00c7a4feb47e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "[ 2 24 28 27 17 22  1  6  8 26 10 11 16 25  5 23 20  7 15  9 21]\n",
+            "[19  4  0 18 12  3 14 13]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "dataset=np.arange(10)\n",
+        "X_train, X_test = train_test_split(dataset, test_size= 4)\n",
+        "print(X_train)\n",
+        "print(X_test)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RMz77JV5i2n_",
+        "outputId": "cee8b061-5032-40de-f5de-866fac6f7c60"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[8 4 3 0 9 6]\n",
+            "[2 7 1 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "dataset=np.arange(10)\n",
+        "X_train, X_test = train_test_split(dataset, train_size= 6)\n",
+        "print(X_train)\n",
+        "print(X_test)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "abbxlGe_i2gS",
+        "outputId": "26072df1-b3de-434f-e028-2e6995c86279"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[3 5 9 2 7 4]\n",
+            "[1 8 0 6]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "dataset=np.arange(10)\n",
+        "X_train, X_test=train_test_split(dataset, train_size=2, test_size=8)\n",
+        "print(X_train)\n",
+        "print(X_test)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aCNgRZ_Bi2Z6",
+        "outputId": "ba2d3c1f-1e56-4693-e048-d20575627c99"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[9 0]\n",
+            "[4 8 6 1 2 3 5 7]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "dataset=np.arange(20).reshape(2,10)\n",
+        "print(dataset)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6CI6Kxpak7k_",
+        "outputId": "6f022af4-c8fe-4889-c293-6c24c08766cd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 0  1  2  3  4  5  6  7  8  9]\n",
+            " [10 11 12 13 14 15 16 17 18 19]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "dataset=np.arange(20).reshape(2,10).T\n",
+        "print(dataset)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BNrRA3Nak7ia",
+        "outputId": "579cf5d4-fb72-4c11-9a96-94e48102facc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 0 10]\n",
+            " [ 1 11]\n",
+            " [ 2 12]\n",
+            " [ 3 13]\n",
+            " [ 4 14]\n",
+            " [ 5 15]\n",
+            " [ 6 16]\n",
+            " [ 7 17]\n",
+            " [ 8 18]\n",
+            " [ 9 19]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "X = np.arange(20).reshape(2,10).T\n",
+        "y=np.arange(10)\n",
+        "X_train,X_test,y_train,y_test = train_test_split(X,y)\n",
+        "\n",
+        "print(X_train)\n",
+        "\n",
+        "print(X_test)\n",
+        "\n",
+        "print(y_train)\n",
+        "\n",
+        "print(y_test)\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_gZ0T7x1k7fR",
+        "outputId": "a018d409-6106-41e4-8f17-124000b76fe3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 4 14]\n",
+            " [ 7 17]\n",
+            " [ 9 19]\n",
+            " [ 6 16]\n",
+            " [ 5 15]\n",
+            " [ 2 12]\n",
+            " [ 0 10]]\n",
+            "[[ 8 18]\n",
+            " [ 3 13]\n",
+            " [ 1 11]]\n",
+            "[4 7 9 6 5 2 0]\n",
+            "[8 3 1]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "X = np.arange(20).reshape(2,10).T\n",
+        "y=np.arange(10)\n",
+        "X_train,X_test,y_train,y_test = train_test_split(X,y, random_state=6)\n",
+        "\n",
+        "print(X_train)\n",
+        "\n",
+        "print(X_test)\n",
+        "\n",
+        "print(y_train)\n",
+        "\n",
+        "print(y_test)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BY8GL13qk7cm",
+        "outputId": "50b0d212-a7b2-4411-c9eb-1175ad50358a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 0 10]\n",
+            " [ 6 16]\n",
+            " [ 5 15]\n",
+            " [ 2 12]\n",
+            " [ 4 14]\n",
+            " [ 3 13]\n",
+            " [ 9 19]]\n",
+            "[[ 8 18]\n",
+            " [ 1 11]\n",
+            " [ 7 17]]\n",
+            "[0 6 5 2 4 3 9]\n",
+            "[8 1 7]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
